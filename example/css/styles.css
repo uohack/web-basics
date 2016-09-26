@@ -1,0 +1,38 @@
+html, body, *{
+	/* Remove default margins, padding */
+	margin: 0;
+	padding: 0;
+	/* Set default fonts */
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+}
+a{
+	/* Remove default link styles */
+	text-decoration: none;
+	color: #9fcc3b;
+}
+a:hover{
+	text-decoration: underline;
+}
+#container{
+	/* Set to 100% w/ maximum of 800px */
+	width: 100%;
+	max-width: 800px;
+	/* Center column */
+	margin: 0 auto;
+}
+h1{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	color: #9fcc3b;
+	margin: 24px 0;
+}
+p{
+	margin: 12px 0;
+}
+.caption{
+	text-align: right;
+	font-style: italic;
+	margin-top: 0;
+}
