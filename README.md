@@ -1,8 +1,28 @@
-Hi there. This repo was created to house a slide deck and starter files for a UOHack presentation on the basics of web development given in fall 2016. I hope to keep this updated over time, but be sure to check the last commit date.
+# Hello
 
-So, without further ado, let's jump right in. Below is a write-up of what I expect to cover. There's a bit more information here than what I'll probably go into so feel free to come back to this after a few days and read through.
+This README was created to compliment a presentation given for UOHack in fall 2016. It is by no means the most technically accurate or thorough explanation of web development topics, but it should offer a basic introduction to web development topics to those who are new to the field.
 
-# What is the internet? (Recently lowercased by the AP)
+I do not claim to be an expert. This is simply a gentle introduction to some complex topics. If anything doesn't make sense, I implore you to go out and learn more from much better sources than myself. The [Mozilla Developer Network](https://developer.mozilla.org/en-US/) is a fantastic resource and they even have their own ["Learning web development" documentation](https://developer.mozilla.org/en-US/docs/Learn).
+
+My goal with this presentation and complimentary document is to shatter the idea that learning about the web is impossibly hard and time-consuming. On the contrary, the vast majority of web developers I know are self-taught (especially in media). 
+
+I doubt I will be able to cover all of these topics in detail during the presentation so please feel free to come back and read up on some of the things that interest you.
+
+# Table of contents
+
+* [What is the internet?](#what-is-the-internet)
+* [HTML](#html-hypertext-markup-language)
+  * [Tags](#tags)
+  * [HTML5](#html5)
+* [CSS](#css-cascading-style-sheets)
+  * [IDs and classes](#ids-and-classes)
+  * [Inspecting a page](#inspecting-a-page)
+* [JavaScript](#javascript)
+  * [A word on jQuery](#a-word-on-jquery)
+  * [A word on node.js](#a-word-on-nodejs)
+* [Wrap up](#lets-wrap-this-up-i-want-to-go-eat-a-burrito)
+
+# What is the internet?
 
 That's a big question. Like, what is the universe? We can loosely define the internet as a network of connected computers. My computer is connected, your computer is connected and we're connected to the internet.
 
@@ -10,9 +30,11 @@ In addition to millions of consumer computers, there are also specialized comput
 
 Whenever you go to a website, you basically download a copy of the site's documents and other assets to your machine and the website is rendered in your browser. 
 
-There are many types of documents that may assist in serving a website (for example, PHP drives WordPress sites) but today we will only be talking about three: **HTML, CSS and JavaScript**.
+There are many types of documents that may assist in serving a website (for example, PHP drives WordPress sites) but today we will only be talking about the three most fundamental document types: **HTML, CSS and JavaScript**.
 
-*Note: For the record, there is definitely a difference between the internet and the world wide web but for the purposes of this class, I'm going to use them interchangeably. I know, I'm the worst. But it just makes it easier during a one-hour primer on web development. If you want more info on the difference, you can find more via [Google](https://www.google.com/search?q=internet+vs+www).*
+*Note: The Associated Press Stylebook recently lowercased internet.*
+
+*Note: There is definitely a difference between the internet and the world wide web but for the purposes of this class, I'm going to use them interchangeably. I know, I'm the worst. But it just makes it easier during a one-hour primer on web development. If you want more info on the difference, you can find more via [Google](https://www.google.com/search?q=internet+vs+www).*
 
 # HTML (HyperText Markup Language)
 
@@ -20,11 +42,9 @@ Let's begin with HTML documents.
 
 HTML documents have a .html extension, just like JPEG images have a .jpg extension or Word documents have a .doc extension.
 
-In fact, you can create a website by simply opening a text document (you can use Notepad on a PC or TextEdit on a Mac). Next, type "Hello world!", save the file as hello.html to your desktop and open that file in a web browser.
+In fact, you can start coding in HTML right now! No special apps are required. First, open up a text document using Notepad on a PC or TextEdit on a Mac. Next, type "Hello world!" and save the file to your desktop as hello.html. Lastly, open up that file in your favorite browser and take a look at your handy work. You just created and viewed your first HTML document.
 
-Congrats, you just created your own website, albeit extremely simple, hosted on your local machine and not accessible to the internet as a whole. Pretty underwhelming huh? Well, we'll do more, just wait.
-
-HTML documents are simply structured text documents where you put the content of your website, like headlines and paragraphs. HTML is called a structured language because you wrap all of your content in tags. 
+In HTML documents are simply structured text documents where you put the content of your website, like headlines and paragraphs. HTML is called a structured language because you wrap all of your content in tags. 
 
 ### Tags
 
@@ -43,10 +63,10 @@ You might have noticed that I didn't put a closing tag with `<img/>`. Well, that
 ```html
 <html>
 	<head>
+		<title>Page title - Think about what the tab says</title>
 		<!-- Meta data -->
 		<meta charset="utf-8">
-		<title>Page title - Think about what the tab says</title>
-		<description>This is the page description, just a brief explanation of what you're doing.</description>
+		<meta name="description" content="This is a simple example page.">
 		<!-- More stuff could go here... -->
 	</head>
 	<body>
@@ -75,17 +95,17 @@ As you start searching the web for resources on HTML development, you'll sure to
 
 ### Introducing: A metaphor
 
-Ok, so everyone has their own metaphor for web development. I like the house metaphor. If it works for you, go with it, if not, don't worry about it.
+Ok, so, everyone has their own metaphor for web development. I like the house metaphor. If it works for you, go with it, if not, don't worry about it.
 
 In this metaphor, a website is a house and HTML is the bare bones of the house. We're talking studs and drywall. No sink, maybe a front door, no carpet. Really just the structure, enough to say, "Ya, that's kind of like a house."
 
-As you saw in the examples, HTML is just the bare bones of a website. There's no design, no decoration, no fun buttons or animations. It's just the structured content in Times New Roman. Sure the headlines may be bigger, but that doesn't mean it looks good. The drywall in a house looks good but it still needs some pictures or something. Now, let's take a look about getting some decorations on the walls with CSS. 
+As you saw in the examples, HTML is just the bare bones of a website. There's no design, no decoration, no fun buttons or animations. It's just the structured content in Times New Roman. Sure the headlines may be bigger, but that doesn't mean it looks good. The drywall in a house is clean but it still needs some decorations to look good. Now, let's take a look about getting some decorations on the walls with CSS. 
 
 # CSS (Cascading Style Sheets)
 
-Ok, HTML is great and all but let's get into styling the site. That's where CSS comes into view. CSS controls the vast majority of the design in a web page. We're talking fonts, colors, size, shape, etc.
+HTML is great and all but let's get into styling the site. CSS controls the  majority of design in a web page. We're talking fonts, colors, size, shape, etc.
 
-It's important to note: Without any HTML, CSS is worthless. And without any CSS, HTML is pretty worthless. The two work together to provide a positive user experience.
+*Note: Without any HTML, CSS is worthless. And without any CSS, HTML is pretty worthless. The two work together to provide a positive user experience.*
 
 Let's jump right into some code.
 
@@ -93,7 +113,8 @@ Let's jump right into some code.
 /* Remember the HTML comments (<!-- -->)? Well, CSS comments are created by a slash-star and star-slash.
 And the comments can even go to multiple lines!
 CSS works by targeting specific elements of the page.
-The simplest way to do this is to target the HTML tags */
+The simplest way to do this is to target the HTML tags,
+like <h1> or <p> */
 
 h1 {
 	/* Let's start by setting the font family of the h1 */
@@ -120,11 +141,11 @@ p {
 }
 ```
 
-I don't want to get bogged down in all of the different ways you can design stuff with CSS but this should give you a sense.
+**PAUSE:** Again, this might seem overwhelming at first but break it down one line at a time. I've added a ton of comments to explain exactly what's going on. To explain it really simply, you have some HTML element you want to create a rule for and you explicitly define what you want that rule to say. for instance, with the `<p>` element, we're saying that we want to change the line-height and letter-spacing (leading and kerning to my print peeps out there) and we define the values for those attributes.
 
-*Note: In order to target a tag you have to state that tag and wrap your rules (styles) in curly braces ({}).*
+I don't want to get bogged down in the syntax or all of the different ways you can design stuff with CSS but this should start to give you a sense of what CSS is like.
 
-Again, I **strongly** urge you to comment out your code as you build your sites, whether it be HTML, CSS or any other language.
+Once again, I **strongly** urge you to comment out your code as you build your sites, whether it be HTML, CSS or any other language. You don't have to be as verbose as I am above, but make sure your comment makes sense. If it's too cryptic you're not doing anyone any favors.
 
 ### IDs and classes
 
@@ -151,7 +172,7 @@ Since an ID can only be used once in an HTML document, you want to save that for
 </html>
 ```
 
-You're going to use the h1 tag more than once in that page, probably for the headline of the article as well. But you only want the flag to be big and green. Well, you can use an ID to target **only** the element with the `#flag` ID. How do you do that? Well, you use the pound sign before the ID.
+You're going to use the h1 tag more than once in that page, probably for the headline of the article as well. But you only want the flag to be big and green. Well, you can use an ID to target **only** the element with the `#flag` ID. How do you do that? Well, in your CSS you add a rule for IDs using the pound sign before the name of the ID.
 
 ```css
 #flag {
@@ -160,7 +181,7 @@ You're going to use the h1 tag more than once in that page, probably for the hea
 }
 ```
 
-Classes are similar, but you use `class="related"` and `.related`. Let's say you have a list of related stories and you want them to be slightly smaller than the other list items.
+Classes are similar, but you use `class="related"` and `.related` instead of `id="related"` and `#related`. Let's say you have a list of related stories and you want them to be slightly smaller than the other list items.
 
 ```html
 <!-- Let's create an unordered list -->
@@ -189,29 +210,29 @@ In this case I have an unordered list (think bullets, as opposed to an ordered l
 
 ### Inspecting a page
 
-Now, I'm going to introduce you to an invaluable tool to web developers. Every major browser has their own version and each is slightly different, but all have the same basic function: allowing developers to inspect the source code for web sites.
+I want to pause a second to introduce you to an invaluable tool to web developers. Every major browser has their own version and each is slightly different, but all have the same basic function: allowing developers to inspect the source code for web sites.
 
 **Browser developer tools** help web developers debug problems, inspect styles and see what assets are loading, among numerous other things.
 
 Long-story short, in your browser of choice, right click (or control-click) somewhere on a web page and click on "Inspect". This should pop open your developer tools.
 
-There's a lot in there and this is definitely not a course on how to use developer tools. Just know that they're there for later on in your dev career.
+There's a lot in there and this is definitely not a course on how to use developer tools. Just know that they're there for later on in your dev career. If you want to learn more, Google around for your favorite browser and "dev tools". Here is the documentation for [Getting started with Chrome dev tools](https://developers.google.com/web/tools/setup/?hl=en).
 
 ### Back to the house metaphor!!!
 
-CSS is the paint. CSS is the hanging picture on the wall. CSS is the different carpet because the 70's shag carpet was getting too old and you had to switch it out. 
+CSS is the paint. CSS is the hanging picture on the wall. CSS is shag carpeting and wood-paneled walls in my college apartment. CSS is the interior design. It sets the tone.
 
-None of those things are absolutely necessary, but everyone decorates their house because it wouldn't be a home without your personal touch.
+Of course, you don't *have* to decorate your house or use CSS, but your website would be extremely bland and would certainly lack any personality.
 
-Remember though, a good design is only as good as the structure it inhabits. If the walls are falling in, you probably don't want to hang that priceless Picasso on the wall. So make sure you have solid, sturdy HTML before you start decorating it. 
+Please remember though, a good design is only as good as the structure it inhabits. If the walls are falling in, you probably don't want to hang that priceless Picasso on the wall. So make sure you have solid, sturdy HTML before you start decorating it. 
 
 ### Wait, you never explained what CSS stands for
 
-Oh yes, well, that's a bit complicated. As it turns out, you can put CSS in a number of places. Those include, but are not limited to:
+Oh yes, well, that's a bit complicated. As it turns out, you can put CSS in a number of places. Those include:
 
 * In a separate CSS document
 * In the `<head>` portion of the HTML document, as long as they're wrapped in `<style>` tags
-* In HTML tags, for example, `<h1 style="font-size:18px;">...</h1`
+* In HTML tags, for example, `<h1 style="font-size:18px;">...</h1>`
 
 Generally speaking, it's bad practice to have CSS in your HTML document at all. So, you should always create a separate CSS document to house your CSS. That way you can change one CSS document and it will affect multiple HTML pages.
 
@@ -229,25 +250,25 @@ Always try to keep your CSS contained in that separate stylesheet.
 
 ### Java
 
-Ok, so let's get this out of the way right from the get go. There **is** a programming language named Java. It has **nothing** to do with JavaScript. Anyone who tells you otherwise is lying. A lot of young web developers will say they're trying to learn Java for their website. If someone says this, they have a long way to go. Which is totally fine. I did that. But it's just a huge red flag that you may not be super experienced. 
+Ok, so let's get this out of the way right from the get go. There **is** a programming language named Java. It has **nothing** to do with JavaScript. Anyone who tells you otherwise is lying.
 
-You may still be wondering why are their names so similar. Well, it's my understanding that Java was super hot when JavaScript was being conceived and it was a marketing decision to try and ride the coattails of Java's success. I don't know if that's correct but that's what I'm going with.
+Why are their names so similar? It's my understanding that Java was super hot when JavaScript was being conceived and it was a marketing decision to try and ride the coattails of Java's success. I don't know if that's correct but that's what I'm going with.
 
 ### Back to JavaScript
 
 JavaScript provides added functionality to your website. Generally speaking, JS requires some sort of input (a click maybe, or a scroll) to change the site in some way. 
 
-Like CSS, JavaScript can be in an external document of in the HTML document. Unlike CSS, sometimes you are required to include JavaScript in the HTML document. It all depends on what you're doing.
+Like CSS, JavaScript can be in an external document of in the HTML document. Unlike CSS, sometimes you are required to include JavaScript in the HTML document. It all depends on what you're trying to accomplish.
 
 ### Jumping straight to the house metaphor
 
 This is where the house metaphor starts to break down a bit. Let's see if I can save it...
 
-JavaScript is equivalent to a light switch, water facet or garbage disposal in some regards. These things require some input, are built in and are super reliable. They make your life easier but they're built in so they can be hard to work with if you're not a plumber or electrician.
+JavaScript is equivalent to a light switch, water facet or garbage disposal in some regards. These things require some input, are built in and are super reliable. They make your life easier but they're built in to the house so they can be hard to work with if you're not a plumber or electrician.
 
-JavaScript can also be like a dryer or refrigerator. These are more of the big external JS libraries where you include a big JavaScript file that someone else wrote to gain some sort of functionality on your site. For instance, I'm using someone else's JS to make [this web page](http://uohack.com/web-basics/) into a slide deck. It works really well but I have no idea how it works. Just like a washing machine. It does a really good job on one specific task but I have no idea how my washing machine works beyond the basic controls that are made available to me.
+JavaScript can also be like a dryer or refrigerator. These are more of the big external JS libraries where you include a big JavaScript file that someone else wrote to gain some sort of functionality on your site. For instance, I'm using someone else's JS to make [this web page](http://uohack.com/web-basics/) into a slide deck for the presentation. It works really well but I have no idea how it works. Just like a washing machine. It does a really good job on one specific task but I have no idea how my washing machine works beyond the basic controls that are made available to me.
 
-*Note: Compare that [web page](http://uohack.com/web-basics/) to the same HTML without any JS included [here](http://uohack.com/web-basics/no-js/).*
+*Note: Compare that [web page](http://uohack.com/web-basics/) to the same HTML without any CSS or JS included [here](http://uohack.com/web-basics/no-js/). Can you notice the similarities?*
 
 ### A word on jQuery
 
@@ -261,7 +282,7 @@ What I'm trying to say is this: jQuery is great and all, but chances are you don
 
 There's a lot of cool stuff happening right now in the world of JavaScript, specifically with [node.js](https://nodejs.org/en/about/). This is extremely advanced stuff for where you're at. Avoid reading about node because it will probably only confuse you more. Stick to learning about the basics of JavaScript.
 
-### Wait, is that it?
+### Wait, is that it? Where's the code?
 
 Yes. There's a ton I could say on JavaScript but I honestly don't think it's worth your time. If today was the first time you have read about HTML and CSS then you're not ready for JavaScript. Go out and build an HTML/CSS website. Or two. Or three.
 
@@ -285,9 +306,7 @@ A generic directory tree might look something like this:
     * font.woff        //font
     * font.eot         //font
 
-Please note that a basic web page like the Daily Emerald homepage can be made up of hundreds of documents. At last check, the Emerald homepage required 140 documents to render. This includes HTML, CSS, JS, images, fonts, tracking software (Chartbeat, Google Analytics, etc.) and ad software (DFP, OpenX, etc.).
-
-So, while it seems really simple with just two files (HTML and CSS), it gets exponentially more complicated when you start working on production sites.
+*Note that a basic web page like the Daily Emerald homepage can be made up of hundreds of documents. At last check, the Emerald homepage required 140 documents to render. This includes HTML, CSS, JS, images, fonts, tracking software (Chartbeat, Google Analytics, etc.) and ad software (DFP, OpenX, etc.).*
 
 While you're still getting started be careful, back stuff up and don't ever make a change on the production servers.
 
