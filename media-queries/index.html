@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>UOHack - Media queries example</title>
+		<meta name="description" content="This is a simple media query example page.">
+		<meta name="author" content="Rob Denton">
+		<!-- See: https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<!-- Style in the head for simplicity -->
+		<style>
+			/* Let's start by defining some defaults */
+			h1{
+				/* By default your headlines will be black */
+				color: black; 
+			}
+
+			/* Let's assume your defaults are set for mobile screens,
+			this mobile-first design theory is pretty useful
+			because if stuff breaks it will always work,
+			it may just display as it would on mobile */
+
+			/* This media query will be for screens between
+			600px and 899px wide */
+			@media (min-width: 600px) and (max-width: 899px){
+				h1{
+					/*These headlines will be green */
+					color: green;
+				}
+			}
+
+			/* This media query will be for screens larger than 900px */
+			@media (min-width: 900px){
+				h1{
+					/*These headlines will be green */
+					color: red;
+				}
+			}
+
+			.green{ color: green; }
+			.red{ color: red; }
+		</style>
+
+	</head>
+	<body>
+		<h1>This headline will change colors if you change the size of the window.</h1>
+		<p>By default and on screens smaller than 599px the h1 font color should be black.</p>
+		<p>For screen sizes between 600 and 899px the h1 font color should be green.</p>
+		<p>For screen sizes greater than 900px the h1 font color should be red.</p>
+	</body>
+</html>

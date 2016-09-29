@@ -16,11 +16,16 @@ I doubt I will be able to cover all of these topics in detail during the present
   * [HTML5](#html5)
 * [CSS](#css-cascading-style-sheets)
   * [IDs and classes](#ids-and-classes)
+  * [Responsive design (Media queries)](#responsive-design-media-queries)
   * [Inspecting a page](#inspecting-a-page)
 * [JavaScript](#javascript)
   * [A word on jQuery](#a-word-on-jquery)
   * [A word on node.js](#a-word-on-nodejs)
 * [Wrap up](#lets-wrap-this-up-i-want-to-go-eat-a-burrito)
+* [More fun stuff](#more-fun-stuff)
+  * [Text editors](#text-editors)
+  * [Stack Overflow](#stack-overflow)
+  * [Version control](#version-control)
 
 # What is the internet?
 
@@ -208,6 +213,57 @@ Now, wait a minute. That's a bunch of new stuff. I know, I know. But if you're g
 
 In this case I have an unordered list (think bullets, as opposed to an ordered list `<ol>` which would be numbers) that has three list items that are headlines. Each list item has the class of "related". We target list items with the class of "related" in the CSS and set the font size to 12px. This is smaller than the usual list item which is set for 18px.
 
+
+### Responsive design (Media queries)
+
+Responsive web design is a topic large enough for its own hour-long presentation (as are most of these subjects), but I feel the need to mention it here. This idea really caught on in 2010 as smart phones became ubiquitous. The general idea here is that you want to produce one web page that looks good on a desktop (large screen), laptop (smaller screen), tablet (large mobile screen) and smart phone (small mobile screen). The alternative is to create two separate websites, one for desktop and one for mobile. I'm sure you've come across websites where the URL is prefixed with "m." or "mobile." like "[mobile.nytimes.com](http://mobile.nytimes.com)" versus the regular "[nytimes.com](http://nytimes.com)".
+
+If you build a responsive web site you only have one set of code to maintain. That's the upside. The downside is you have to craft one website that degrades gracefully from a BIG desktop screen down to a mobile phone.
+
+I don't want to brag but [The Register-Guard](http://registerguard.com) had one of the first, most elegant responsive websites in the media industry. That's part of the reason I wanted to go work there. So what does this look like in the real world?
+
+Go to [registerguard.com](http://registerguard.com) on a desktop or laptop and re-size the screen from full-width down to a very narrow display. Can you see the site break down from four columns to three columns to one column?
+
+This sort of effect is achieved by utilizing CSS media queries. The simplest way I can describe media queries is to try and expand on our house metaphor (oh, yes, that will continue throughout this document).
+
+Let's say you own one square mile of land. You can build a sprawling mansion on this land with gardens and fountains and a whole bunch of stuff because you have so much room. That's like a large desktop display. But if you buy a plot of land where a row house used to be in San Francisco. In this case (mobile phone), you have very little land to work with. In order to build a house with the same amount of rooms as that mansion you would have to build a really tall row house.
+
+We write this in CSS by defining different CSS rules for different screen sizes.
+
+```css
+/* Let's start by defining some defaults */
+h1{
+	/* By default your headlines will be black */
+	color: black; 
+}
+
+/* Let's assume your defaults are set for mobile screens,
+this mobile-first design theory is pretty useful
+because if stuff breaks it will always work,
+it may just display as it would on mobile */
+
+/* This media query will be for screens between
+600px and 899px wide */
+@media (min-width: 600px) and (max-width: 899px){
+	h1{
+		/*These headlines will be green */
+		color: green;
+	}
+}
+
+/* This media query will be for screens larger than 900px */
+@media (min-width: 900px){
+	h1{
+		/*These headlines will be green */
+		color: red;
+	}
+}
+```
+
+**PAUSE:** Ok so this topic is a bit advanced and it's totally fine if this doesn't make sense. Click [here](http://uohack.com/web-basics/example/media-queries/) to see an example. The source code of that page can be seen [here](https://github.com/uohack/web-basics/tree/gh-pages/media-queries/index.html).
+
+There is a lot of writing out there on responsive web design that is a lot better than anything I can put up here so I'll let you go look for some of those if you want to learn more. Just make sure to start with this [A List Apart](http://alistapart.com/article/responsive-web-design) article, it's definitely **the** definitive manifesto for responsive design.
+
 ### Inspecting a page
 
 I want to pause a second to introduce you to an invaluable tool to web developers. Every major browser has their own version and each is slightly different, but all have the same basic function: allowing developers to inspect the source code for web sites.
@@ -315,3 +371,40 @@ Some final thoughts:
 * Simple is always better
 * This stuff takes time and practice to get better (start with your own personal website)
 * Technologies are constantly changing so **never stop learning**
+
+# More fun stuff
+
+These are some tools and tricks that I've learned over the years. They don't really fit into the presentation but some of you might be interested.
+
+### Text editors
+
+Earlier in this document I suggested you open Notepad on PCs or TextEdit on Macs to create some HTML code. There's nothing wrong with these text editors but they are **very** bare bones compared to others like. Below is a list of popular text editors that I have used over the years.
+
+* [TextWrangler](http://www.barebones.com/products/textwrangler/): This is the typical my-first-editor for many students. It works well, is very simple, and is hard to mess up. There are no frills but that's totally fine when you're first learning about web development. And it's free. If you're not sure which text editor to download, this is probably the one for you.
+* [Sublime Text](https://www.sublimetext.com/): This is a freemium text editor that I graduated to after TextWrangler. For whatever reason it just felt more authentic than TextWrangler but it was still pretty simple. You can install **a lot** of plugins to Sublime to make your life easier but you really don't need them when your getting started. The only downside to Sublime is that if you use the free download it will prompt you to register and pay for a license. You don't have to, you can hit cancel every time but it does get kind of annoying. I bought the license at one point and I remember being surprised by how cheap it was.
+* [BBEdit](http://www.barebones.com/products/bbedit/demo.html): BBEdit is the paid-for version of TextWrangler and offers a lot of great features, such as comparing two files for differences and searching through directories. I use this at work for most of my development work. For whatever reason it doesn't tab as well as Sublime does but that's something I can deal with. If you're willing to pay for a nice text editor, this is a good option.
+* [Atom](https://atom.io/): A few years ago there was a big effort by Github to make a text editor for the cool kids. It feels like a pro-level version of Sublime Text with a lot of built in features, specifically related to Github. I used it a little. The biggest perk was a live MarkDown preview and it's free.
+
+### Stack Overflow
+
+When you first start doing web development Google will be your best friend. And 9 times out of ten StackOverflow will be the first few results. StackOverflow is a forum (?) where you can ask any question about code and someone will answer it. But better than that, chances are someone has already asked a question about the issue you're having so the answer is sitting there waiting for you!
+
+While many of your questions will already be answered, don't be afraid to ask questions too. They'll tell you if your question has already been answered or have an answer for you in a few hours. 
+
+*Note: Etiquette dictates that you simplify your code as much as possible before asking your question. Before you post a question, make sure you've boiled down your issue to the root cause and never post the entirety of your code in a question. This technique has an added benefit: When you break down the problem into smaller parts it's common to find a solution before you ever ask the question.*
+
+### Version control
+
+While version control is vastly outside the scope of this document, I would be remiss if I didn't mention it.
+
+When you're working on an essay it's good to save early and often, as well as back up the file to a cloud service. The equivalent to that in programming is version control. 
+
+This is kind of a complex subject so I don't want to get too deep into it but if you want to use version control you'll probably want to use a service like Github or BitBucket. They're pretty similar but the most popular one is Github. 
+
+To confuse you a bit more, both Github and BitBucket utilize a version control system called [Git](https://help.github.com/articles/set-up-git/) at their core. 
+
+You can think of Git as saving your essay early and often while Github and BitBucket offer the cloud backup. They offer a lot of other features as well, like issue tracking, wikis and even some simple website hosting. Both are free to the casual user.
+
+You might have noticed that this document and all of my examples are in Github.
+
+Long story short, if you want to get into web development, you'll need to start using version control sooner or later. If you're just getting started, I recommend starting with Github because they have a lot of [getting started documentation](https://guides.github.com/).
