@@ -1,12 +1,12 @@
 # Hello
 
-This README was created to compliment a presentation given for UOHack in fall 2016. It is by no means the most technically accurate or thorough explanation of web development topics, but it should offer a basic introduction to web development topics to those who are new to the field.
+This README was created to complement a presentation given for UOHack in fall 2016. It is by no means the most technically accurate or thorough explanation of web development topics, but it should offer a basic introduction to those new to the field.
 
-I do not claim to be an expert. This is simply a gentle introduction to some complex topics. If anything doesn't make sense, I implore you to go out and learn more from much better sources than myself. The [Mozilla Developer Network](https://developer.mozilla.org/en-US/) is a fantastic resource and they even have their own ["Learning web development" documentation](https://developer.mozilla.org/en-US/docs/Learn).
+I do not claim to be an expert. This is simply a gentle introduction to some complex topics. If anything doesn't make sense, I implore you to go out and learn more from much better sources than myself. The [Mozilla Developer Network](https://developer.mozilla.org/en-US/) is a fantastic resource and it even has its own ["Learning web development" documentation](https://developer.mozilla.org/en-US/docs/Learn).
 
-My goal with this presentation and complimentary document is to shatter the idea that learning about the web is impossibly hard and time-consuming. On the contrary, the vast majority of web developers I know are self-taught (especially in media). 
+My goal with this presentation and complementary document is to shatter the idea that learning about the web is impossibly hard and time-consuming. On the contrary, the vast majority of web developers I know are self-taught (especially in media). 
 
-I doubt I will be able to cover all of these topics in detail during the presentation so please feel free to come back and read up on some of the things that interest you.
+I doubt I will be able to cover all of these topics in detail during the presentation, so please feel free to come back and read up on some of the things that interest you.
 
 # Table of contents
 
@@ -26,6 +26,7 @@ I doubt I will be able to cover all of these topics in detail during the present
   * [Text editors](#text-editors)
   * [Stack Overflow](#stack-overflow)
   * [Version control](#version-control)
+  * [Additional resources](#additional-resources)
 
 # What is the internet?
 
@@ -49,7 +50,7 @@ HTML documents have a .html extension, just like JPEG images have a .jpg extensi
 
 In fact, you can start coding in HTML right now! No special apps are required. First, open up a text document using Notepad on a PC or TextEdit on a Mac. Next, type "Hello world!" and save the file to your desktop as hello.html. Lastly, open up that file in your favorite browser and take a look at your handy work. You just created and viewed your first HTML document.
 
-In HTML documents are simply structured text documents where you put the content of your website, like headlines and paragraphs. HTML is called a structured language because you wrap all of your content in tags. 
+In HTML, documents are simply structured text documents where you put the content of your website, like headlines and paragraphs. HTML is called a structured language because you wrap all of your content in tags. 
 
 ### Tags
 
@@ -154,7 +155,7 @@ Once again, I **strongly** urge you to comment out your code as you build your s
 
 ### IDs and classes
 
-Before I explain what IDs and classes are, you need to know that IDs are unique. They can only be used once. IDs are not to be used multiple times. If you want more than one you need to make a class. Classes can be used as many times as you want. 
+Before I explain what IDs and classes are, you need to know that IDs are unique. They can only be used once on a page. IDs are not to be used multiple times. If you want more than one you need to make a class. Classes can be used as many times as you want. 
 
 ID = once
 Class = as many as you want
@@ -216,17 +217,23 @@ In this case I have an unordered list (think bullets, as opposed to an ordered l
 
 ### Responsive design (Media queries)
 
-Responsive web design is a topic large enough for its own hour-long presentation (as are most of these subjects), but I feel the need to mention it here. This idea really caught on in 2010 as smart phones became ubiquitous. The general idea here is that you want to produce one web page that looks good on a desktop (large screen), laptop (smaller screen), tablet (large mobile screen) and smart phone (small mobile screen). The alternative is to create two separate websites, one for desktop and one for mobile. I'm sure you've come across websites where the URL is prefixed with "m." or "mobile." like "[mobile.nytimes.com](http://mobile.nytimes.com)" versus the regular "[nytimes.com](http://nytimes.com)".
+Responsive web design is a topic large enough for its own hour-long presentation (as are most of these subjects), but I feel the need to mention it here. This idea really caught on in 2010 as smart phones became ubiquitous. The general idea here is that you want to produce one web page that looks good on a desktop (large screen), laptop (smaller screen), tablet (large mobile screen) and smart phone (small mobile screen). 
 
-If you build a responsive web site you only have one set of code to maintain. That's the upside. The downside is you have to craft one website that degrades gracefully from a BIG desktop screen down to a mobile phone.
+The alternative is to create two separate websites, one for desktop and one for mobile. I'm sure you've come across websites where the URL is prefixed with "m." or "mobile." like "[mobile.nytimes.com](http://mobile.nytimes.com)" versus the regular "[nytimes.com](http://nytimes.com)".
 
-I don't want to brag but [The Register-Guard](http://registerguard.com) had one of the first, most elegant responsive websites in the media industry. That's part of the reason I wanted to go work there. So what does this look like in the real world?
+![nyt](https://cloud.githubusercontent.com/assets/4853944/18941698/1312af0e-85c8-11e6-8f32-80261639291c.png)
+
+To be clear, having a separate mobile website **is not** responsive design because the web site does not respond as the size changes, instead it kicks you over to an entirely different website.
+
+If you build a responsive web site you only have one set of code to maintain. That's the upside. The downside is you have to craft one website that degrades gracefully from a BIG desktop screen down to a mobile phone. This is not as simple as it sounds for big websites with a lot of content.
+
+[The Register-Guard](http://registerguard.com) had one of the first, most elegant responsive websites in the media industry. That's part of the reason I wanted to go work there. So what does this look like in the real world?
 
 Go to [registerguard.com](http://registerguard.com) on a desktop or laptop and re-size the screen from full-width down to a very narrow display. Can you see the site break down from four columns to three columns to one column?
 
 This sort of effect is achieved by utilizing CSS media queries. The simplest way I can describe media queries is to try and expand on our house metaphor (oh, yes, that will continue throughout this document).
 
-Let's say you own one square mile of land. You can build a sprawling mansion on this land with gardens and fountains and a whole bunch of stuff because you have so much room. That's like a large desktop display. But if you buy a plot of land where a row house used to be in San Francisco. In this case (mobile phone), you have very little land to work with. In order to build a house with the same amount of rooms as that mansion you would have to build a really tall row house.
+Let's say you own one square-mile of land. You can build a sprawling mansion on this land with gardens and fountains and a whole bunch of stuff because you have so much room. That's like a large desktop display. But if you buy a plot of land where a row house used to be in San Francisco. In this case (mobile phone), you have very little land to work with. In order to build a house with the same amount of rooms as that mansion you would have to build a really tall row house.
 
 We write this in CSS by defining different CSS rules for different screen sizes.
 
@@ -282,7 +289,7 @@ Of course, you don't *have* to decorate your house or use CSS, but your website 
 
 Please remember though, a good design is only as good as the structure it inhabits. If the walls are falling in, you probably don't want to hang that priceless Picasso on the wall. So make sure you have solid, sturdy HTML before you start decorating it. 
 
-### Wait, you never explained what CSS stands for
+### Wait, you never explained what "cascading styles sheets" means
 
 Oh yes, well, that's a bit complicated. As it turns out, you can put CSS in a number of places. Those include:
 
@@ -296,7 +303,7 @@ Generally speaking, it's bad practice to have CSS in your HTML document at all. 
 
 Yes, sorry, it's getting late and I still have to get through JavaScript.
 
-Ok, so your browser will apply the style that is closest to the HTML tag. That's the cascading part. Say in your styles.css file you set `h1{ font-size: 24px; }` and in the head of your HTML document you set `h1{ font-size: 18px; }` and in the tag you set `style="font-size:12px;"`. What size do you think your h1 will be?
+Ok, to oversimplify things, let's say that your browser will apply the style that is closest to the HTML tag. That's the cascading part. Say in your styles.css file you set `h1{ font-size: 24px; }` and in the head of your HTML document you set `h1{ font-size: 18px; }` and in the tag you set `style="font-size:12px;"`. What size do you think your h1 will be?
 
 If you answered 12px you would be correct. That's because your styles will cascade and the closest one to the HTML tag will be deemed the most important. This opens up the door for some super hacky in-line CSS which is bad.
 
@@ -340,7 +347,7 @@ There's a lot of cool stuff happening right now in the world of JavaScript, spec
 
 ### Wait, is that it? Where's the code?
 
-Yes. There's a ton I could say on JavaScript but I honestly don't think it's worth your time. If today was the first time you have read about HTML and CSS then you're not ready for JavaScript. Go out and build an HTML/CSS website. Or two. Or three.
+Yes. There's a ton I could say on JavaScript but I honestly don't think it's worth your time. If today was the first time you have read about HTML and CSS then you're not ready for JavaScript. Go out and build an HTML/CSS website. Or two. Or three. And use the web development tools I talked about earlier to inspect web sites that you think are cool.
 
 Then, when you start realizing that you need some added muscle, start teaching yourself about vanilla JavaScript. Once you have a basic understanding of that, you can start using jQuery, if you need it.
 
@@ -350,13 +357,13 @@ Check out my [example directory](https://github.com/uohack/web-basics/tree/gh-pa
 
 A generic directory tree might look something like this:
 
-* site
+* site (AKA: root or /)
   * index.html
-  * styles
+  * /styles
     * styles.css
-  * js
+  * /js
     * script.js
-  * assets
+  * /assets
     * image.jpg
     * animated.gif
     * font.woff        //font
@@ -383,7 +390,7 @@ Earlier in this document I suggested you open Notepad on PCs or TextEdit on Macs
 * [TextWrangler](http://www.barebones.com/products/textwrangler/): This is the typical my-first-editor for many students. It works well, is very simple, and is hard to mess up. There are no frills but that's totally fine when you're first learning about web development. And it's free. If you're not sure which text editor to download, this is probably the one for you.
 * [Sublime Text](https://www.sublimetext.com/): This is a freemium text editor that I graduated to after TextWrangler. For whatever reason it just felt more authentic than TextWrangler but it was still pretty simple. You can install **a lot** of plugins to Sublime to make your life easier but you really don't need them when your getting started. The only downside to Sublime is that if you use the free download it will prompt you to register and pay for a license. You don't have to, you can hit cancel every time but it does get kind of annoying. I bought the license at one point and I remember being surprised by how cheap it was.
 * [BBEdit](http://www.barebones.com/products/bbedit/demo.html): BBEdit is the paid-for version of TextWrangler and offers a lot of great features, such as comparing two files for differences and searching through directories. I use this at work for most of my development work. For whatever reason it doesn't tab as well as Sublime does but that's something I can deal with. If you're willing to pay for a nice text editor, this is a good option.
-* [Atom](https://atom.io/): A few years ago there was a big effort by Github to make a text editor for the cool kids. It feels like a pro-level version of Sublime Text with a lot of built in features, specifically related to Github. I used it a little. The biggest perk was a live MarkDown preview and it's free.
+* [Atom](https://atom.io/): A few years ago there was a big effort by Github to make a text editor for the cool kids. It feels like a pro-level version of Sublime Text with a lot of built-in features, specifically related to Github. I used it a little. The biggest perk was a live MarkDown preview and it's free.
 
 ### Stack Overflow
 
@@ -408,3 +415,11 @@ You can think of Git as saving your essay early and often while Github and BitBu
 You might have noticed that this document and all of my examples are in Github.
 
 Long story short, if you want to get into web development, you'll need to start using version control sooner or later. If you're just getting started, I recommend starting with Github because they have a lot of [getting started documentation](https://guides.github.com/).
+
+### Additional resources
+
+* [CodeWithMe Portland](http://codewithme.us/portland/exercises.html) (free)
+* [Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css) (free)
+* [Treehouse](https://teamtreehouse.com/) ($)
+* [CodeCademy](https://www.codecademy.com/learn/web) (free) - Note: Some people really like this service but I've never been a huge fan
+
